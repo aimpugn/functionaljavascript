@@ -1,0 +1,58 @@
+{
+  "ecmaVersion": 6,
+  "plugins": {
+    "guess-types": {
+      
+    },
+    "jshint": {
+      "config": {
+        "asi": true,
+        "boss": true,
+        "debug": true,
+        "elision": true,
+        "eqnull": true,
+        "esnext": true,
+        "evil": true,
+        "expr": true,
+        "lastsemic": true,
+        "laxbreak": true,
+        "laxcomma": true,
+        "loopfunc": true,
+        "moz": true,
+        "multistr": true,
+        "noyield": true,
+        "plusplus": true,
+        "proto": true,
+        "scripturl": true,
+        "strict": true,
+        "sub": true,
+        "supernew": true,
+        "validthis": true,
+        "withstmt": true,
+        "browser": true,
+        "browserify": true,
+        "couch": true,
+        "devel": true,
+        "dojo": true,
+        "jasmine": true,
+        "jquery": true,
+        "mocha": true,
+        "mootools": true,
+        "node": true,
+        "nonstandard": true,
+        "prototypejs": true,
+        "qunit": true,
+        "rhino": true,
+        "shelljs": true,
+        "typed": true,
+        "worker": true,
+        "wsh": true,
+        "yui": true
+      }
+    }
+  },
+  "libs": [
+    "ecma5",
+    "browser"
+  ]
+}

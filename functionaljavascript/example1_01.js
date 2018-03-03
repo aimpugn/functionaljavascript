@@ -1,3 +1,4 @@
+"use strict";
 //javascript
 var users = [
 	{ id: 1, name: "ID", age: 32 },
@@ -11,7 +12,7 @@ var users = [
 
 function filter(list, predicate) {
 	var new_list = [];
-	for (var i = 0, len = list.length; i < len; i++) {
+	for ( var i = 0, len = list.length; i < len; i++ ) {
 		if (predicate(list[i])) new_list.push(list[i]);
 	}
 	return new_list;

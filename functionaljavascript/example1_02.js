@@ -1,3 +1,4 @@
+"use strict";
 //javascript
 var users = [
 	{ id: 1, name: "ID", age: 32 },

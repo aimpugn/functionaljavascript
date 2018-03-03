@@ -1,3 +1,4 @@
+"use strict";
 var obj = { a : 1, "b" : 2 };
 obj.c = 3;
 obj[ 'd' ] = 4;
