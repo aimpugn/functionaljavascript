@@ -245,6 +245,90 @@ console.log( _.filter( [ 1, 2, 3, 4],
 //[3, 4]
 
 
+console.log( "---------------------------------------" );
+
+
+_.identity = function( v ) { return v; }
+var a = 10;
+console.log( _.identity( a ) ); //10
+console.log( _.identity( 0 ) ); //0
+console.log( _.identity( false ) ); //false
+console.log( _.identity( NaN ) ); //NaN
+console.log( _.identity( undefined ) ); //undefined
+console.log( _.identity( {} ) ); //{}
+console.log( _.identity( [] ) ); //[]
+if( _.identity( 0 ) ) console.log( "A" ); //출력 안됨
+if( _.identity( {} ) ) console.log( "A" ); //A
+if( _.identity( -1 ) ) console.log( "음수" ); //음수 출력
+
+console.log( _.filter( [ true, 0, 10, 'a', false, null, "" ], 
+			_.identity ) ); //[true, 10, "a"]
+
+
+_.falsy = function( v ) { return !v; }
+_.truthy = function( v ) { return !!v; }
+console.log( _.falsy( true ) ); //fasle
+console.log( _.truthy( true ) ); //true
+
+console.log( "---------------------------------------" );
+_.some0 = function( list ){
+	return !!_.find( list, _.identity );
+}
+_.every0 = function ( list ){
+	return _.filter( list, _.identity ).length == list.length;
+}
+
+console.log( _.some0( [ 0, null, 2 ] ) ); //true
+console.log( _.some0( [ 0, null, false ] ) ); //false
+
+console.log( _.every0( [ 0, null, 2 ] ) ); //false
+console.log( _.every0( [ {}, true, 2 ] ) ); //true
+
+
+console.log( "---------------------------------------" );
+
+function not( v ) { return !v; }
+
+function beq( a ) {
+	return function( b ){
+		return a === b;
+	}
+}
+
+function positive( list ){
+	return _.find( list, _.identity );
+}
+
+function negativeIndex( list ){
+	return _.findIndex( list, not );
+}
+
+_.some = function( list ){
+	return not( not( positive( list ) ) );
+}
+/*_.every = function( list ){
+	return beq( -1 )( _.findIndex( list , not ) );
+}*/
+_.every = function( list ){
+	return beq( -1 )( negativeIndex( list ) );
+}
+
+console.log( _.findIndex( users , not ) );
+
+console.log( _.some( [ 0, null, 2 ] ) ); //true
+console.log( _.some( [ 0, null, false ] ) ); //false
+
+console.log( _.every( [ 0, null, 2 ] ) ); //false
+console.log( _.every( [ {}, true, 2 ] ) ); //true
+
+
+
+
+
+
+
+
+
 
 
 
